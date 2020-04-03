@@ -9,19 +9,21 @@
     Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5. <br>
     Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci. <br>
 </h3>
+<h3><h4><span id="result"></span></h4></h3>
 <script>
     let x = 0;
     let y = 1;
     let z;
     for (count = 0; count < 20 ; count++) {
-        document.write(x + y + "<br>");
         if ((x + y) % 5 == 0 )
             document.write((x + y) + " chia hết cho 5" + "<br>");
+        else document.write(x + y + "<br>");
         z = x + y;
         x = y;
         y = z;
-        T = x + y + z
+        T = x + z + y - 2;
     }
+   document.getElementById("result").innerHTML = "Tổng của 20 số đầu tiên trong dãy fibonacci = " + T;
 </script>
 </body>
 </html>
