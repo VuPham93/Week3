@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Luyện tập vòng lặp 01</title>
+</head>
+<body>
+<h3>Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên. <br>
+    Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5. <br>
+    Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci. <br>
+</h3>
+<script>
+    let x = 0;
+    let y = 1;
+    let z;
+    for (count = 0; count < 20 ; count++) {
+        document.write(x + y + "<br>");
+        if ((x + y) % 5 == 0 )
+            document.write((x + y) + " chia hết cho 5" + "<br>");
+        z = x + y;
+        x = y;
+        y = z;
+        T = x + y + z
+    }
+</script>
+</body>
+</html>

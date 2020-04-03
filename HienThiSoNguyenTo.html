@@ -14,6 +14,8 @@
                 if (N % i == 0) {
                     if (i == N) {
                         console.log(N + " la SNT");
+                        console.log(i);
+                        console.log(count);
                         document.write(N +"<br>");
                         count++;
                     }
@@ -22,7 +24,7 @@
             }
         }
     }
-    document.getElementById("result").innerHTML = (count - 1 + " số nguyên tố đầu tiên là:" );
+    document.getElementById("result").innerHTML = (count + " số nguyên tố đầu tiên là:" );
 </script>
 </body>
 </html>
