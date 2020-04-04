@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Luyện tập vòng lặp 02</title>
+</head>
+<body>
+<h3>Bài 3: In tam giác vuông. Các góc vuông nằm ở các vị trí khác nhau</h3>
+<script>
+    let cell1 = "<br>";
+    let i;
+        for (i = 0; i <= 4; i++) {
+            cell1 = "<td>*<td/>" + cell1;
+            document.write(cell1);
+        }
+    document.write("<br>");
+    let j;
+        for (j = 0; j <= 4; j++) {
+            let cell2 = '*****';
+            cell2 = cell2.substr(j, 5) + "<br>";
+            document.write(cell2);
+    }
+    document.write("<br>");
+    let k;
+    for (k = 0; k <= 4; k++) {
+        let cell3 = '\xa0\xa0\xa0\xa0.....';
+        cell3 = cell3.substr(k, 5) + "<br>";
+        document.write(cell3);
+    }
+    document.write("<br>");
+    let l;
+    for (l = 4; l >= 0; l--) {
+        let cell4 = '\xa0\xa0\xa0\xa0.....';
+        cell4 = cell4.substr(l, cell4.length - 4) + "<br>";
+        document.write(cell4);
+    }
+</script>
+</body>
+</html>

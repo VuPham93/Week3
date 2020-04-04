@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Luyện tập vòng lặp 02</title>
+</head>
+<body>
+<h3>
+    Bài 6: In hình trái tim
+</h3>
+<script>
+    for (j = 4; j >=0; j--) {
+        for (i = 60; i >= -60; i--) {
+            if (i == 5*j || i == -5*j || i == 5*j-40 || i == -5*j+40 ) cell2 = "*";
+            else cell2 = "\xa0";
+            document.write(cell2);
+        }document.write('<br>')
+    }
+    for (j = 10; j >=0; j--) {
+        for (i = 60; i >= -60; i--) {
+            if (i == 4*j || i == -4*j) cell2 = "*";
+            else cell2 = "\xa0";
+            document.write(cell2);
+        }document.write('<br>')
+    }
+</script>
+</body>
+</html>
