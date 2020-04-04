@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Luyện tập vòng lặp 02</title>
+</head>
+<body>
+<h3>
+    Bài 1: In dãy Finonaci<br>
+</h3>
+<script>
+    let n = parseInt(prompt("Số số hạng trong dãy Fibonacci cần in?"))
+    let x = 0;
+    let y = 1;
+    let count;
+    document.write("Số thứ 1: " + y + "<br>")
+    let z;
+    for (count = 0; count < n ; count++) {
+        document.write("Số thứ " + (count + 1) + ": " + (x + y) + "<br>");
+        z = x + y;
+        x = y;
+        y = z;
+    }
+</script>
+</body>
+</html>
