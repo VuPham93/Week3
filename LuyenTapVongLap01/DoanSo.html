@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Luyện tập vòng lặp 01</title>
+</head>
+<body>
+<h3>
+    Bài 8: Game đoán số
+</h3>
+<button type="submit" onclick="guest()"> Chơi</button>
+<script>
+    function  guest() {
+        let a = parseInt(prompt("Số muốn đoán trong khoảng nào"));
+        console.log("Khoảng" + a);
+        let b = Math.floor(Math.random() * a);
+        console.log("Random " + b);
+        for (b; ;) {
+            let c = parseInt(prompt("Đoán xem"));
+            console.log("Đoán " + c);
+            if (b == c) {
+                alert("Chúc mừng");
+                break;
+            } else {
+                if (b < c) {
+                    alert("Lớn hơn");
+                } else {
+                    alert("Bé hơn");
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>
