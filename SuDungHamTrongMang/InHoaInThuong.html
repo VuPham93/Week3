@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Thực hành] Tạo bàn cờ caro đơn giản</title>
+</head>
+<body>
+<h3>
+    Bài 3: Viết một chương trình nhập vào một chuỗi và chuyển các ký tự chữ thường trong chuỗi vừa nhập sang thành dạng chữ hoa
+</h3>
+<script>
+    let str = 'The Quick Brown Fox';
+    let UPPER = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    let lower = 'abcdefghijklmnopqrstuvwxyz';
+    var result = [];
+    for (let x = 0; x < str.length; x++) {
+        if(UPPER.indexOf(str[x]) !== -1) {
+            result.push(str[x].toLowerCase());
+        }
+        else
+            if (lower.indexOf(str[x]) !== -1) {
+                result.push(str[x].toUpperCase());
+            }
+            else {
+                result.push(str[x]);
+            }
+    }
+    document.write(result.join(''));
+</script>
+</body>
+</html>
