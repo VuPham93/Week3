@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Từ điển</title>
+</head>
+<td><input type="text" id="input"></td>
+<input type="submit" value="Translate" onclick="trans()">
+<p><span id="result"></span></p>
+<body>
+<script>
+    function trans() {
+        let input = document.getElementById("input").value;
+        let output;
+        let eng = [
+            ["hello", "bye", "morning", "afternoon"],
+            ["monday", "tuesday", "wednesday", "thursday"],
+            ["friday", "saturday", "sunday", "eat"],
+            ["drink", "walk", "jump", "dog"],
+            ["cat", "car", "bike", "run"],
+        ];
+        let vie = [
+            ["Xin chào", "Tạm biệt", "Buổi sáng", "Buổi chiều"],
+            ["Thứ hai", "Thứ ba", "Thứ tu", "Thứ 5"],
+            ["Thứ sáu", "Thứ bảy", "Chủ nhật", "Ăn"],
+            ["Uống", "Đi bộ", "Nhảy", "Con chó"],
+            ["Con mèo", "Xe ô tô", "Xe đạp", "Chạy"],
+        ];
+        loop: for (let i = 0; i < eng.length; i++) {
+            for (let j = 0; j < eng[i].length; j++) {
+                if (input === eng[i][j]) {
+                    output = vie[i][j];
+                    break loop;
+                } else output = "not found";
+            }
+        }
+        document.getElementById("result").innerHTML = output;
+    }
+</script>
+</body>
+</html>
