@@ -23,14 +23,14 @@
     document.write("<br>");
     let k;
     for (k = 0; k <= 4; k++) {
-        let cell3 = '\xa0\xa0\xa0\xa0.....';
+        let cell3 = '\u2002\u2002\u2002\u2002*****';
         cell3 = cell3.substr(k, 5) + "<br>";
         document.write(cell3);
     }
     document.write("<br>");
     let l;
     for (l = 4; l >= 0; l--) {
-        let cell4 = '\xa0\xa0\xa0\xa0.....';
+        let cell4 = '\u2002\u2002\u2002\u2002*****';
         cell4 = cell4.substr(l, cell4.length - 4) + "<br>";
         document.write(cell4);
     }

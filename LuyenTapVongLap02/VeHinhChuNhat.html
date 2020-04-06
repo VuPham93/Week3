@@ -9,27 +9,17 @@
     Bài 4: In hình chữ nhật
 </h3>
 <script>
-    let cell1;
-    let cell2;
-    let cell3;
+    let cell;
     let i;
     let j;
-    let k;
-    for (i = 1; i <= 21; i++) {
-        cell1 = "*";
-        document.write(cell1);
-    } document.write("<br>")
-    for (j = 1; j <=5; j++) {
+    for (j = 1; j <=7; j++) {
         for (i = 1; i <= 40; i++) {
-            if (i == 1 || i == 40) cell2 = "*";
-            else cell2 = "\xa0";
-        document.write(cell2);
+            if (i == 1 || i == 40 || j ==1 || j == 7) cell = "*";
+            else cell = "\u2002";
+        document.write(cell);
     }document.write('<br>')
     }
-    for (k = 1; k <= 21; k++) {
-        cell3 = "*";
-        document.write(cell3);
-    }
+
 </script>
 </body>
 </html>
