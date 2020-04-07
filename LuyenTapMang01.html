@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Luyện tập mảng 01</title>
+</head>
+<body>
+    <h3>Bài 1</h3>Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.<br>
+    <h3>Bài 2</h3>Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau. Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.<br>
+    <h3>Bài 3</h3>Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.<br>
+    <h3>Bài 4</h3>Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.<br>
+    <h3>Bài 5</h3>Viết chương trình đếm số nguyên âm trong một chuỗi<br>
+    <h3>Bài 6</h3>Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array"<br>
+    <h3>Bài 7</h3>Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình kiểm tra xem V có thuộc mảng đã cho không, nếu V thuộc mảng đã cho xoá V khỏi mảng (Bản chất việc xoá ở đây tức là dịch phần tử ở bên phải V sang vị trí của V, và gán 0 cho phần tử cuối cùng của mảng)<br>
+    <h3>Bài 8</h3>Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.<br>
+    <h3>Bài 9</h3>Viết chương trình khởi tạo/nhập vào 2 mảng số nguyên gồm 10 phần tử, gọi là mảng a và b. Mảng c là một mảng được khai báo gồm 20 phần tử số nguyên. Chương trình sẽ lưu các phần tử được nối từ hai mảng b và a vào mảng c. Hiển thị mảng c.<br>
+    <h3>----------------------------------------------------------------------------------------------------------------</h3>
+<script>
+    // Nhập mảng
+    let array = Array();
+    let y = parseInt(prompt("Mời nhập độ dài của mảng 1"));
+    let x;
+    for (x = 1; x <= y; x++) {
+        array[x] = parseInt(prompt("Mời nhập số thứ " + x + " của mảng 1"));
+        document.write("Số thứ " + x + " của mảng 2 là: " + array[x] + "<br>");
+    }
+    // Bài 1:
+    let i = 0;
+    for (x = 1; x <= y; x++) {
+        if (array[x] >= 10) {
+            i = i + 1;
+        }
+    }
+    document.write("<h4> Có " + i + " số nguyên lớn hơn hoặc bằng 10</h4>");
+    // Bài 2:
+    let j = 0;
+    let k = 0;
+    for (x = 1; x <= y; x++) {
+        if (array[x] >= j) {
+            j = array[x];
+            k = x;
+        }
+    }
+    document.write("<h4> Số có giá trị lớn nhất là: " + j + " nằm ở vị trí thứ " + k + " trong mảng</h4>");
+    // Bài 3:
+    let total = 0;
+    let avg;
+    for (x = 1; x <= y; x++) {
+        total = total + array[x];
+        avg = total / y;
+    }
+    document.write("<h4> Giá trị trung bình của các phần tử trong mảng là: " + avg+ "</h4>");
+    // Bài 4:
+    let i2 = 0;
+    for (x = 1; x <= y; x++) {
+        if (array[x] < 0) {
+            i2 = i2 + 1;
+        }
+    }
+    document.write("<h4> Có " + i2 + " số nguyên âm trong mảng</h4>");
+    // Bài 5:
+    let first = 0;
+    let last = y;
+    let rsvArray = array.slice();
+    while (first < last) {
+        let b = rsvArray[first];
+        rsvArray[first] = rsvArray[last];
+        rsvArray[last] = b;
+        first++;
+        last--;
+    }
+    document.write("<h4> Các phần tử đảo ngược của mảng là: " + rsvArray +"</h4>");
+    // Bài 6:
+    let check = 0;
+    let V = parseInt(prompt("Mời nhập số cần tìm trong mảng 1"));
+    for (x = 1; x <= y; x++) {
+        if (array[x] === V) {
+            check = 1;
+        }
+    }
+    if (check  === 0) {
+        document.write("<h4> Số cần tìm là: " +  V + " không nằm trong mảng 1</h4>");
+    } else {
+        document.write("<h4> Số cần tìm là: " + V + " nằm trong mảng 1</h4>");
+    }
+    // Bài 7:
+    let cut;
+    let cutArray = array.slice();
+    for (x = 1; x <= y; x++) {
+        for (let count = 0; cutArray.indexOf(V) !== -1; count++) {
+            if (cutArray.indexOf(V) !== -1) {
+                cut = cutArray.indexOf(V);
+                cutArray.splice(cut, 1);
+            }
+        }
+    }
+    document.write("<h4> Mảng 1 sau khi xóa số cần tìm (nếu có): " + cutArray + "</h4>");
+    // Bài 8:
+    let sortArray = array.slice();
+    for (x = 1; x <= y; x++) {
+        sortArray.sort(function (a, b){return b - a})
+    } document.write("<h4> Mảng 1 sắp xếp theo thứ tự giảm dầm:" + sortArray + "</h4>");
+    // Bài 9:
+    let array2 = Array();
+    let yb = parseInt(prompt("Mời nhập độ dài của mảng 2"));
+    let xb;
+    for (xb = 1; xb <= yb; xb++) {
+        array2[xb] = parseInt(prompt("Mời nhập số thứ " + xb + " của mảng 2"));
+        document.write("Số thứ " + xb + " của mảng 2 là: " + array2[xb] + "<br>");
+    }
+    let array3 = array.concat(array2);
+    document.write("<h4>Mảng mới sau khi ghép 2 mảng là: " + array3 +"</h4>");
+</script>
+</body>
+</html>
