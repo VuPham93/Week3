@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Luyện tập tạo và sử dụng hàm 02</title>
+</head>
+<body>
+<h3>Bài 1: Viết hàm tính bình phương của một số bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</h3>
+<div>
+    <input id="input1" type="number">
+    <button onclick="square()">Tính bình phương</button>
+    <p>Kết quả: <span id="result1"></span></p>
+</div><br>
+<h3>Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được. </h3>
+<div>
+    <input id="input2" type="number" placeholder="Bán kính">
+    <button onclick="perimeterAndArea()">Tính diện tích và chu vi</button>
+    <p>Chu vi: <span id="perimeter"></span></p>
+    <p>Diện tích: <span id="area"></span></p>
+</div>
+<br>
+<h3>Bài 3: Viết hàm tính giai thừa của một số nguyên bất kỳ được đưa vào. Gọi hàm vừa xây dựng được.</h3>
+<div>
+    <input id="input3" type="number" placeholder="Số cần tìm giai thừa">
+    <button onclick="factorial()">Tính giai thừa</button>
+    <p>Giai thừa = <span id="factorial"></span></p>
+</div>
+<br>
+<h3>Bài 4: Viết hàm kiểm tra xem ký tự nhập vào có phải là ký tự số không. Nếu là ký tự số hàm trả về true, ngược lại trả về false.</h3>
+<div>
+    <input id="input4" type="text" placeholder="Nhập ký tự bất kỳ">
+    <button onclick="checkNumber()">Kiểm tra</button>
+    <p>Kết quả: <span id="check"></span></p>
+</div>
+<br>
+<h3>Bài 5: Viết hàm nhận vào 3 số nguyên bất kỳ, trả về số nguyên có giá trị nhỏ nhất.</h3>
+<div>
+    <input id="num1" type="number">
+    <input id="num2" type="number">
+    <input id="num3" type="number">
+    <button onclick="checkMin()">Tìm số nhỏ nhất</button>
+    <p>Số nhỏ nhất là: <span id="min"></span></p>
+</div>
+<br>
+<h3>Bài 6: Viết hàm nhận vào một số, kiểm tra xem nếu số đưa vào có phải là nguyên dương không. Nếu là nguyên dương trả về true, ngược lại trả về false.</h3>
+<div>
+    <input id="num" type="number">
+    <button onclick="checkZero()">Kiểm tra âm/dương</button>
+    <p>Số nhập vào là: <span id="zero"></span></p>
+</div>
+<br>
+<h3>Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.</h3>
+<h3>Bài 8: Viết hàm truyền vào mảng số nguyên bất kỳ, sau đó đảo ngược mảng số nguyên đó.</h3>
+<div>
+    <input id="length" type="number" placeholder="Chiều dài của mảng">
+    <button onclick="reverse()">Nhập phần tử</button>
+    <p>Mảng đảo ngược là: <span id="reverse"></span></p>
+</div>
+<br>
+<h3>Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ, kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không. Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1. </h3>
+<div>
+    <input id="array" type="text" placeholder="Nhập chuỗi ký tự">
+    <input id="character" type="text" placeholder="Ký tự cần tìm">
+    <button onclick="checkLetter()">Tìm</button>
+    <p>Ký tự cần tìm <span id="find"></span></p>
+</div>
+<br>
+<script>
+    //Bài 1:
+    function square() {
+        let a = document.getElementById("input1").value;
+        let sqr = a * a;
+        document.getElementById("result1").innerHTML = sqr;
+    }
+    //Bài 2:
+    function perimeterAndArea() {
+        let r = document.getElementById("input2").value;
+        let perimeter = 2 * Math.PI * r;
+        let area = Math.PI * r * r;
+        document.getElementById("perimeter").innerHTML = perimeter.toFixed(3);
+        document.getElementById("area").innerHTML = area.toFixed(3);
+    }
+    //Bài 3:
+    function factorial() {
+        let a = document.getElementById("input3").value;
+        let i;
+        if (a === 0 || a === 1) {
+            a = 1;
+        }
+        for (i = a - 1; i >= 1; i--) {
+            a *= i;
+        }
+        document.getElementById("factorial").innerHTML = a;
+    }
+    //Bài 4:
+    function checkNumber() {
+        let x = document.getElementById("input4").value;
+        console.log(x);
+        if (x/1 == x) {
+            document.getElementById("check").innerHTML = "Đúng";
+        }
+        else
+            document.getElementById("check").innerHTML = "Sai";
+    }
+    //Bài 5:
+    function checkMin() {
+        let a = parseInt(document.getElementById("num1").value);
+        let b = parseInt(document.getElementById("num2").value);
+        let c = parseInt(document.getElementById("num3").value);
+        let array = [a, b, c];
+        let min = array[0];
+        for (let i = 1; i < array.length; i++) {
+            if (min > array[i]) {
+                min = array[i];
+            }
+        } document.getElementById("min").innerHTML = min;
+    }
+    //Bài 6:
+    function checkZero() {
+        let a = parseInt(document.getElementById("num").value);
+        if (a >= 0) {
+        document.getElementById("zero").innerHTML = "số nguyên dương"
+        }
+        else
+            document.getElementById("zero").innerHTML = "số nguyên âm"
+    }
+    //Bài 7+8:
+    function reverse() {
+        let array = Array();
+        let y = parseInt(document.getElementById("length").value);
+        for (let x = 0; x < y; x++) {
+            array[x] = prompt("Mời nhập phần tử thứ " + x + " của mảng");
+        }
+        let first = 0;
+        let last = array.length - 1;
+        while (first < last) {
+            let b = array[first];
+            array[first] = array[last];
+            array[last] = b;
+            first++;
+            last--;
+        }
+        document.getElementById("reverse").innerHTML = array;
+    }
+    //Bài 9:
+    function checkLetter() {
+        let input = document.getElementById("array").value;
+        let check = document.getElementById("character").value;
+        let array = input.split("");
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (array[i] == check) {
+                count++;
+            }
+        }
+        if (count > 0) {
+            document.getElementById("find").innerHTML = "xuất hiện " + count + " lần trong chuỗi";
+        }
+        else
+            document.getElementById("find").innerHTML = " không có trong chuỗi";
+    }
+</script>
+</body>
+</html>
