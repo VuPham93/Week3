@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Luyện tập mảng 02</title>
+</head>
+<body>
+<h3>Bài 1:</h3> Viết chương trình khởi tạo mảng 2 chiều, gồm một bộ các phần tử có sẵn,  in ra các phần tử trong mảng. <br>
+<h3>Bài 2:</h3>Viết một chương trình để in các ký tự trong một mảng theo thứ tự đảo ngược. Ví dụ, nếu một mảng chứa các ký tự  {'c', 's', 'c', '2', '6', '1'} sau khi thực hiện đảo ngược sẽ là "162csc"<br>
+<h3>Bài 3:</h3>Viết một chương trình khai báo một mảng ký tự và kích thước của mảng. Chương trình này đếm số ký tự số trong mảng.<br>
+<h3>Bài 4:</h3>Viết một chương trình để đếm số từ trong một chuỗi<br>
+<h3>Bài 5:</h3>Viết một chương trình nhập vào 2 chuỗi, sau đó kiểm tra xem hai chuỗi có giống nhau hay không.<br>
+<h3>Bài 6:</h3>Viết chương trình nhập vào một mảng ký tự, tìm tất cả các ký tự trong mảng là (-) và thay thế các ký tự này bởi ký tự ( _ )<br>
+<h3>-----------------------------------------------------------------------------------------------------------------------------------------</h3>
+<script>
+    // //Bài 1:
+    let a = [
+        [1, 2, 1, 24],
+        [8, 11, 9, 4],
+        [7, 0, 7, 27],
+        [7, 4, 28, 14],
+        [3, 10, 26, 7]
+    ];
+    for (let i in a) {
+        document.write("row " + i + ": ");
+        for (let j in a[i]) {
+            document.write(" " + a[i][j]);
+        } document.write( "<br>");
+    }
+    // //Bài 2:
+    let b = ['c', 's', 'c', '2', '6', '1'];
+    let c = b.reverse();
+    document.write("<h4>Chuỗi đảo ngược là: ");
+        for (let i2 = 0; i2 < c.length; i2++ ) {
+        document.write(c[i2]);
+    }
+        document.write("</h4>");
+    // //Bài 3 + 4:
+    let array = Array();
+    let y = parseInt(prompt("Mời nhập độ dài của mảng"));
+    let x;
+    let countNumber = 0;
+    let countLetter = 0;
+    for (x = 1; x <= y; x++) {
+        array[x] = prompt("Mời nhập phần tử thứ " + x + " của mảng");
+        document.write("Phần tử thứ " + x + " của mảng  là: " + array[x] + "<br>");
+        if (array[x]%1 === 0) {
+            countNumber++;
+        } else {
+            countLetter++;
+        }
+    }
+    document.write("<h4>Số ký tự số trong mảng là: "+ countNumber + "</h4>");
+    document.write("<h4>Số ký tự chữ trong mảng là: "+ countLetter + "</h4>");
+    //Bài 5:
+    let input1 = prompt("Mời nhập chuỗi 1");
+    let string1 = input1.split("");
+    let input2 = prompt("Mời nhập chuỗi 2");
+    let string2 = input2.split("");
+    let test;
+    let count = 0;
+    let str;
+    if (string1.length !== string2.length) {
+        document.write("<h4>Hai chuỗi khác nhau</h4>")
+    } else {
+        for (test = 0; test < string1.length; test++) {
+            str = string2[test];
+            if (string1.indexOf(str) !== -1) {
+                count++;
+            }
+        }
+        if (count === string1.length) {
+            document.write("<h4>Hai chuỗi giống nhau</h4>")
+        } else document.write("<h4>Hai chuỗi khác nhau</h4>")
+    }
+    //Bài 6:
+    let test3;
+    let input3 = prompt("Mời nhập chuỗi 3");
+    let string3 = input3.split("");
+    for (test3 = 0; test3 < string3.length; test3++) {
+        if (string3[test3] === "-") {
+            string3[test3] = "_";
+        }
+    } document.write("<h4>Chuỗi mới sau khi thay - bằng _ là: " + string3 + "</h4>");
+</script>
+</body>
+</html>
