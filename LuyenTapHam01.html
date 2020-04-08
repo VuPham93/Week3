@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Luyện tập tạo và sử dụng hàm 01</title>
+</head>
+<body>
+<h3>Tạo hàm alertMessage() hiển thị hộp thoại chứa chuỗi  "Xin chao". Gọi hàm từ trong phần body của trang web.</h3>
+<div>
+    <button onclick="alertMessage()">Bài tập 1</button>
+</div><br>
+<h3>Tạo hàm nhận vào một đối số dạng số, tăng giá trị đối số đó lên 1 và trả lại giá trị cho lời gọi hàm. Gọi hàm từ trong phần body của trang web và hiển thị kết quả lên màn hình.</h3>
+<div>
+    <button onclick="bonusOne()">Bài tập 2</button>
+</div><br>
+<h3>Tạo hàm nhận vào hai tham số. Nếu giá trị của tham số thứ nhất lớn hơn tham số thứ hai, hiển thị hộp thoại thông báo cho người dùng. Nếu giá trị của tham số thứ nhất nhỏ hơn hoặc bằng tham số thứ hai, trả về tổng của hai tham số.</h3>
+<div>
+    <button onclick="compare()">Bài tập 3</button>
+</div><br>
+<h3>Thêm các hàm alert() vào những vị trí thích hợp trong đoạn mã để bạn có thể nhìn thấy giá trị của biến result trước và sau lời gọi hàm.</h3>
+<div>
+    <button onclick="addNumbers()">Bài tập 4</button>
+    <p>Giá trị trước: <span id="before"></span></p>
+    <p>Giá trị sau: <span id="after"></span></p>
+</div><br>
+<h3>Tạo một mảng với bảy phần tử dạng chuỗi có giá trị là tên các ngôi sao sau: Polaris, Aldebaran, Deneb, Vega, Altair, Dubhe và Regulus. Tạo một mảng khác với bảy phần tử dạng chuỗi có giá trị là tên các chòm sao tương ứng chứa các ngôi sao: Ursa Minor, Tarurus, Cygnus, Lyra, Aquila, Ursa Major và Leo. Tiếp theo, tạo một hàm nhận vào một tham số dạng chuỗi duy nhất. Trong hàm này, duyệt qua mảng thứ nhất để tìm tên ngôi sao. Nếu tìm thấy, trả lại giá trị tương ứng với chỉ số đó ở mảng thứ hai. Nói cách khác, trả lại tên chòm sao của ngôi sao đó.</h3>
+<div>
+    <button onclick="checkStar()">Bài tập 5</button>
+    <p>Result: <span id="out"></span></p>
+</div><br>
+<script>
+    //Bài 1:
+    function alertMessage() {
+        alert("Xin Chào");
+    }
+    //Bài 2:
+    function bonusOne() {
+        let a = parseInt(prompt("Mời nhập 1 số"));
+        b = a + 1;
+        alert(b);
+    }
+    //Bài 3:
+    function compare(number1, number2) {
+        number1 = parseInt(prompt("Mời nhập số thứ nhất"));
+        number2 = parseInt(prompt("Mời nhập số thứ hai"));
+        let total;
+        if (number1 > number2) {
+            alert("Số thứ nhất lớn hơn");
+        }
+        else {
+            total = number1 + number2;
+            alert("Tổng hai số là: " + total);
+        }
+    }
+    //Bài 4:
+    function addNumbers() {
+        let firstNum = 4;
+        let secondNum = 8;
+        document.getElementById("before").innerHTML = result;
+        result = firstNum + secondNum;
+        return result;
+    }
+    result = 0;
+    result = addNumbers();
+    document.getElementById("after").innerHTML = result;
+    //Bài 5:
+    let starOne = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let starTwo = ["UrsaMinor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    function checkStar() {
+        let name = prompt("Nhập tên ngôi sao");
+        let nameOut = 0;
+        for (let i = 0; i <= starOne.length; i++) {
+            if (name === starOne[i]) {
+                nameOut =  starTwo[i];
+                break;
+            }
+            else nameOut = ("Không tìm thấy");
+        }
+        document.getElementById("out").innerHTML = nameOut;
+    }
+</script>
+</body>
+</html>
