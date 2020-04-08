@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Chuyển đổi giữa feet và meters</title>
+</head>
+<body>
+<div>
+    <label>Feet to meters</label>
+    <input id="inputFeet" type="number" placeholder="Feet"
+           oninput="feetToMet(this.value)"
+          onchange="feetToMet(this.value)"> = <span id="outputMeters"></span> meters
+</div>
+<br>
+<div>
+    <label>Meters to feet</label>
+    <input id="inputMeters" type="number" placeholder="Meters"
+       oninput="metToFeet(this.value)"
+       onchange="metToFeet(this.value)"> = <span id="outputFeet"></span> feet
+</div>
+<script>
+    function feetToMet(feet) {
+        feet = parseFloat(feet);
+        document.getElementById("outputMeters").innerHTML = feet * 0.305;
+    }
+    function metToFeet(met) {
+        met = parseFloat(met);
+        document.getElementById("outputFeet").innerHTML = 3.279 * met;
+    }
+</script>
+</body>
+</html>
