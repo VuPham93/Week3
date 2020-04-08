@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Hàm kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+    function isPrime(n) {
+        if (n === 1) {
+            return false;
+        } else {
+            for (let i = 2; i < n; i++) {
+                if (n % i === 0)
+                    return false;
+            }
+            return true;
+        }
+    }
+    let count = 0;
+    for (let n = 1; n < 10000; n++) {
+        if (isPrime(n) === true) {
+            count++;
+            console.log(n);
+        }
+    }
+    alert("Số số nguyên tố nhỏ hơn 10000 là: " + count);
+</script>
+</body>
+</html>
