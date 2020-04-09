@@ -53,7 +53,7 @@
             <input class="button" type="button" id="saveButton1" value="Save" style="display: none" onclick="saveRow(1)">
         </td>
         <td>
-        <input class="button" type="button" value="Delete" onclick="deleteRow(1)">
+            <input class="button" type="button" value="Delete" onclick="deleteRow(1)">
         </td>
     </tr>
     <tr id="row2">
@@ -84,14 +84,14 @@
         let tableLength = table.rows.length;
         table.insertRow(tableLength).outerHTML =
             "<tr id='row" + tableLength + "'>" +
-                 "<td id='nameRow" + tableLength + "'>" + newProduct + "</td>" +
-                 "<td>" +
-                       "<input class='button' type='button' id='editButton" + tableLength + "' value='Edit' onclick='editRow(" + tableLength + ")'>" +
-                       "<input class='button' type='button' id='saveButton" + tableLength + "' value='Save' style='display: none' onclick='saveRow(" + tableLength + ")'>" +
-                 "</td>" +
-                 "<td>" +
-                       "<input class='button' type='button' value='Delete' onclick='deleteRow(" + tableLength + ")'>" +
-                 "</td>" +
+            "<td id='nameRow" + tableLength + "'>" + newProduct + "</td>" +
+            "<td>" +
+            "<input class='button' type='button' id='editButton" + tableLength + "' value='Edit' onclick='editRow(" + tableLength + ")'>" +
+            "<input class='button' type='button' id='saveButton" + tableLength + "' value='Save' style='display: none' onclick='saveRow(" + tableLength + ")'>" +
+            "</td>" +
+            "<td>" +
+            "<input class='button' type='button' value='Delete' onclick='deleteRow(" + tableLength + ")'>" +
+            "</td>" +
             "</tr>";
         document.getElementById("newProduct").value = "";
         document.getElementById("totalProduct").innerHTML = tableLength;
@@ -111,9 +111,9 @@
     }
     function deleteRow(number) {
         document.getElementById("row"+number+"").innerHTML="";
-        let count = document.getElementById("totalProduct")
-            let newCount = count.innerHTML - 1;
-            count.innerHTML = newCount;
+        let count = document.getElementById("totalProduct");
+        let newCount = count.innerHTML - 1;
+        count.innerHTML = newCount;
     }
 </script>
 </body>
