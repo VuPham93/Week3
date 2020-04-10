@@ -110,7 +110,7 @@
         document.getElementById("saveButton" + number).style.display="none";
     }
     function deleteRow(number) {
-        document.getElementById("row"+number+"").innerHTML="";
+        document.getElementById("row"+number+"").outerHTML="";
         let count = document.getElementById("totalProduct");
         let newCount = count.innerHTML - 1;
         count.innerHTML = newCount;
